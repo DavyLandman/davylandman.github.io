@@ -1,0 +1,14 @@
+# Site settings
+title: Davy Landman's homepage
+email: davy.landman@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Davy Landman (@DavyLandman) is a Software Engineer who decided to go into research to better understand Software Engineering.
+  He is doing his PhD at the CWI (Amsterdam), part of the Software Analyis and Transformations team. 
+  Next to his research he is one of the contributors to the Rascal metaprogramming language.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.davylandman.nl" # the base hostname & protocol for your site
+twitter_username: DavyLandman
+github_username: DavyLandman
+
+# Build settings
+markdown: kramdown
