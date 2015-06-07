@@ -1,0 +1,18 @@
+{
+  "name": "_assets",
+  "version": "0.0.0",
+  "authors": [
+    "Davy Landman <davy.landman@gmail.com>"
+  ],
+  "description": "Assets for the jekyll page",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}
