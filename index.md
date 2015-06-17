@@ -15,10 +15,16 @@ On this site I share my professional interests and achievements, you'll find pre
 
 Writing software is a wonderful combination of creativity and engineering. Here is a list of the open source project's developed or frequently contribute to.
 
-- [Rascal MPL](http://www.rascal-mpl.org/): the one-stop-shop for metaprogramming. Since 2011 I've been part of the main contributors of this programming language. Contributions in Unicode compatibility, cross-platform stability, overall performance, IDE experience, and general all around bug fixing.
+- [Rascal MPL](http://www.rascal-mpl.org/): the one-stop-shop for metaprogramming. Since 2011 I've been part of the main contributors of this programming language. Contributions in Unicode compatibility, cross-platform stability, transparent compression, overall performance, IDE experience, general bug fixing, unit tests, and community building.
 - [csvtools](https://www.github.com/davylandman/csvtools/): a collection of gnu like command line utilities for manipulation and filtering CSV files accurately<sup>(newlines and separators in quoted fields)</sup> and efficiently<sup>(400MB/s)</sup>. This is one of my PhD pet projects, I had large CSVs with quoted fields, the options were either R or very ugly regular expression.
-- [pdb.values](https://www.github.com/cwi-swat/pdb.values/): the program database used as primary data structure for Rascal MPL. Primary contributions in Unicode correct string operations, source location data structure, optimizing memory/speed, binary file format improvements.
+- [pdb.values](https://www.github.com/cwi-swat/pdb.values/): the program database used as primary data structure for Rascal MPL. Primary contributions in Unicode correct string operations, source location data structure, optimizing memory/speed all over the place, and improvements in the binary file format.
 - [cloud-backup](): small utility to sync a directory with pictures to another folder, but it also compresses and rescales the pictures in the target folder to 300dpi at 10x15cm print size. This reduces the size of the files greatly and allows you to keep this folder in dropbox/google drive without consuming too much space. 
 - [EFWrappableFields](): allow enum and protected collections in C# Entity Framework classes without impacting LINQ. This is a library I open source while working at a previous employer, it enabled C# features not supported by the EF team, while keeping the same SQL queries. It involved some rewriting of the LINQ expression tree.
+
+<a href="#" id="research"></a>
+
+### Research
+
+I'm not shy of asking critical questions, and my own assumptions and beliefs are just as often the target. After seeing the impressive beasts we end up creating I wondered if there was a way to nurture our creations better. Those two conditions are the primary reasons I accepted a position with [Paul Klint]() and [Jurgen Vinju]() to become a researcher in their [Sofware Analysis and Transformations](http://www.cwi.nl/swat/) group. In this time I've learned a lot about software engineering, how hard it is to answer a critical question, and as always, about myself. During this journey I've also written papers. Here is a short overview with links to the data, pre-prints, and a blog post explaining it.
 
 
