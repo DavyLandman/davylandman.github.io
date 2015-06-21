@@ -5,3 +5,39 @@
 
 @import "_bootstrap.scss";
 @import "_bootstrap-theme.scss";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+
+body {
+  color: #404040
+
+}
+
+header {
+  background: no-repeat center center;
+  background-color: #808080;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/img/main-page-background.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .container {
+    color: white;
+    padding-top: 8em;
+    padding-bottom: 3em;
+    text-align: center;
+    h1 {
+      font-size: 80px;
+    }
+    .small {
+      max-width: 100px;
+      border-color: white;
+      border-width: 4px;
+      margin: 10px auto;
+    }
+  }
+}
