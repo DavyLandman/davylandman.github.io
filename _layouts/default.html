@@ -38,15 +38,12 @@
         window.addEventListener('scroll', function(e){
           var position = window.pageYOffset || document.documentElement.scrollTop;
           scrollingReverse = position < previousPosition;
-          navVisible = previousPosition < nav.clientHeight;
+          navVisible = position < nav.clientHeight;
           setTimeout(function () {
             if (scrollingReverse && !navVisible) {
               nav.className = nav.className.replace(nonFixedClass, fixedClass);
             }
-            else if (scrollingReverse && navVisible) {
-              nav.className = nav.className.replace(fixedClass, nonFixedClass);
-            }
-            else if (!scrollingReverse) {
+            else if (!scrollingReverse || navVisible) {
               nav.className = nav.className.replace(fixedClass, nonFixedClass);
             }
           }, 250);

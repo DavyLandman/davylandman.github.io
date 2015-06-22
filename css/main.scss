@@ -4,7 +4,7 @@
 @charset "UTF-8";
 
 @import "_bootstrap.scss";
-@import "_bootstrap-theme.scss";
+//@import "_bootstrap-theme.scss";
 
 @mixin transition($prop, $time) {
   -webkit-transition: $prop $time;
@@ -22,13 +22,31 @@ body {
   color: #404040;
 }
 
+nav {
+  @include transition(all, 0.5s);
+
+}
+
+
+.navbar-fixed-top {
+  background: rgba(248, 248, 248, 0.7);
+  border-radius: 0;
+  border: 0;
+}
+
 .navbar-not-fixed {
   position: absolute;
   left: 0;
   top:0;
   width: 100%;
-
-
+  border-radius: 0;
+  border: 0;
+  background: rgba(248, 248, 248, 0);
+  .navbar-brand,
+  .navbar-nav > li > a
+  {
+    color: white;
+  }
 }
 
 header {
