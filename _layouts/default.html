@@ -4,13 +4,15 @@
   <body>
     {% include header.html %}
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          {{ content }} 
+    <section class="body">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{ content }} 
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <footer>
       <div class="container">
@@ -24,5 +26,28 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function init() {
+        var nav = document.querySelector("nav");
+        var justScrolled = false;
+        window.addEventListener('scroll', function(e){
+          var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+          justScrolled = true;
+          setInterval(function() {
+            if (justScrolled) {
+              var navIsSmall = nav.className.indexOf(" smaller") >= 0;
+              if (!navIsSmall && scrolled > 1) {
+                nav.className += " smaller";
+              }
+              else if (navIsSmall && scrolled <= 1) {
+                nav.className = nav.className.replace(" smaller", "");
+              }
+              justScrolled = false;
+            }
+          }, 250);
+        });
+      }
+      window.onload = init();
+    </script>
   </body>
 </html>

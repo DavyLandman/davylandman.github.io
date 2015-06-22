@@ -6,14 +6,20 @@
 @import "_bootstrap.scss";
 @import "_bootstrap-theme.scss";
 
+@mixin transition($prop, $time) {
+  -webkit-transition: $prop $time;
+     -moz-transition: $prop $time;
+      -ms-transition: $prop $time;
+          transition: $prop $time;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
 
 body {
-  color: #404040
-
+  color: #404040;
 }
 
 header {
@@ -24,16 +30,35 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 25em;
 
   .container {
     color: white;
-    padding-top: 8em;
-    padding-bottom: 3em;
+    display: -webkit-box;
     text-align: center;
+    width: 100%;
+    height: 100%;
+
+    .row {
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
     h1 {
       font-size: 80px;
     }
-    .small {
+    h2 {
+      font-size: 50px;
+    }
+    hr.small {
       max-width: 100px;
       border-color: white;
       border-width: 4px;
@@ -41,3 +66,4 @@ header {
     }
   }
 }
+
