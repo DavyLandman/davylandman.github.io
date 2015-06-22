@@ -29,16 +29,16 @@
     <script type="text/javascript">
       window.onload = function () {
         var nav = document.querySelector("nav");
-        var nonFixedClass = "navbar-not-fixed";
+        var nonFixedClass = "navbar-static-top";
         var fixedClass = "navbar-fixed-top";
 
         var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
         var scrollingReverse = false;
-        var navVisible = previousPosition < nav.clientHeight;
+        var navVisible = previousPosition == 0;
         window.addEventListener('scroll', function(e){
           var position = window.pageYOffset || document.documentElement.scrollTop;
           scrollingReverse = position < previousPosition;
-          navVisible = position < nav.clientHeight;
+          navVisible = position == 0;
           setTimeout(function () {
             if (scrollingReverse && !navVisible) {
               nav.className = nav.className.replace(nonFixedClass, fixedClass);
