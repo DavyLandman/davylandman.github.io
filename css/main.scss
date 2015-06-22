@@ -4,6 +4,7 @@
 @charset "UTF-8";
 
 @import "_bootstrap.scss";
+@import "_bootstrap-navbar.scss";
 //@import "_bootstrap-theme.scss";
 
 @mixin transition($prop, $time) {
@@ -24,9 +25,10 @@ body {
 
 nav {
   @include transition(all, 0.5s);
-
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
 
 .navbar-fixed-top {
   background: rgba(248, 248, 248, 0.7);
@@ -42,13 +44,18 @@ nav {
   left: 0;
   top:0;
   width: 100%;
-
 }
+
+
+@mixin overlay-background-image($color, $img) {
+  background-image: linear-gradient($color, $color), $img;
+}
+
 
 header {
   background: no-repeat center center;
   background-color: #808080;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/img/main-page-background.jpg');
+  @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-1000.jpg'));
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -89,4 +96,16 @@ header {
     }
   }
 }
+
+@media (min-width: 1000px) {
+  header {
+    @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-2000.jpg'));
+  }
+}
+@media (min-width: 2000px) {
+  header {
+    @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-3000.jpg'));
+  }
+}
+
 
