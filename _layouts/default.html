@@ -33,22 +33,26 @@
         var fixedClass = "navbar-fixed-top";
 
         var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
-        var scrollingReverse = false;
-        var navVisible = previousPosition == 0;
+        var didScroll = false;
         window.addEventListener('scroll', function(e){
-          var position = window.pageYOffset || document.documentElement.scrollTop;
-          scrollingReverse = position < previousPosition;
-          navVisible = position == 0;
-          setTimeout(function () {
-            if (scrollingReverse && !navVisible) {
-              nav.className = nav.className.replace(nonFixedClass, fixedClass);
-            }
-            else if (!scrollingReverse || navVisible) {
-              nav.className = nav.className.replace(fixedClass, nonFixedClass);
-            }
-          }, 250);
-          previousPosition = position;
+          didScroll = true;
         });
+        setInterval(function(e){
+          if (!didScroll) {
+            return;
+          }
+          didScroll = false;
+          var position = window.pageYOffset || document.documentElement.scrollTop;
+          var scrollingReverse = position < previousPosition;
+          var navVisible = position == 0;
+          if (scrollingReverse && !navVisible) {
+            nav.className = nav.className.replace(nonFixedClass, fixedClass);
+          }
+          else if (!scrollingReverse || navVisible) {
+            nav.className = nav.className.replace(fixedClass, nonFixedClass);
+          }
+          previousPosition = position;
+        }, 250);
       };
     </script>
   </body>
