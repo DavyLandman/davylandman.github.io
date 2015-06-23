@@ -66,6 +66,13 @@ header {
   background-size: cover;
   height: 350px;
 
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+
   .container {
     color: white;
     display: -webkit-box;
@@ -86,12 +93,6 @@ header {
       height: 100%;
     }
 
-    h1 {
-      font-size: 80px;
-    }
-    h2 {
-      font-size: 50px;
-    }
     hr.small {
       max-width: 100px;
       border-color: white;
@@ -116,7 +117,33 @@ header {
   header {
     @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-3000.jpg'));
     height: 700px;
+    h1 {
+      font-size: 100px;
+    }
+    h2 {
+      font-size: 70px;
+    }
   }
 }
 
+@media (min-width: 992px) {
+  header {
+    h1 {
+      font-size: 65px;
+    }
+    h2 {
+      font-size: 45px;
+    }
+  }
+}
 
+@media (min-width: 1200px) {
+  header {
+    h1 {
+      font-size: 80px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+  }
+}
