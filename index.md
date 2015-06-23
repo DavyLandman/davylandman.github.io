@@ -25,6 +25,5 @@ Writing software is a wonderful combination of creativity and engineering. Here 
 
 ### Research
 
-I'm not shy of asking critical questions, and my own assumptions and beliefs are just as often the target. After seeing the impressive beasts we end up creating I wondered if there was a way to nurture our creations better. Those two conditions are the primary reasons I accepted a position with [Paul Klint]() and [Jurgen Vinju]() to become a researcher in their [Sofware Analysis and Transformations](http://www.cwi.nl/swat/) group. In this time I've learned a lot about software engineering, how hard it is to answer a critical question, and as always, about myself. During this journey I've also written papers. Here is a short overview with links to the data, pre-prints, and a blog post explaining it.
-
+Critical questions have always guided my thoughts. After working in industry for 5 years I had seen the beasts we create and wondered if there was a better way of taking care. Those two motivations drove me to accept the PhD position with [Paul Klint]() and [Jurgen Vinju]() in the [Sofware Analysis and Transformations](http://www.cwi.nl/swat/) group. In general my interests are: reverse engineering knowledge from source code, domain specific languages (DSLs), code quality, software complexity, empirical software engineering. Here is a short overview of my papers including links to the data, pre-prints, and a blog post explaining it.
 

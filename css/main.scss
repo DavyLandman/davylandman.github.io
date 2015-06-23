@@ -46,8 +46,12 @@ nav {
   width: 100%;
 }
 
-
 @mixin overlay-background-image($color, $img) {
+  background-image: -moz-linear-gradient(top, $color 0%, $color 100%), $img; /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color), color-stop(100%,$color)), $img; /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, $color 0%, $color 100%), $img; /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top, $color 0%,$color 100%), $img; /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top, $color 0%,$color 100%), $img; /* IE10+ */
   background-image: linear-gradient($color, $color), $img;
 }
 
@@ -60,7 +64,7 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 25em;
+  height: 350px;
 
   .container {
     color: white;
@@ -100,11 +104,18 @@ header {
 @media (min-width: 1000px) {
   header {
     @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-2000.jpg'));
+    height: 500px;
+  }
+}
+@media (min-width: 1500px) {
+  header {
+    height: 600px;
   }
 }
 @media (min-width: 2000px) {
   header {
     @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-3000.jpg'));
+    height: 700px;
   }
 }
 
