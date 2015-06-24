@@ -1,27 +1,31 @@
 @charset "UTF-8";
 @import "mixins/_transition.scss";
+@import "mixins/_center.scss";
 
 nav {
   @include transition(all, 0.5s);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  ul {
+
+  }
 }
 
 .navbar-fixed-top {
+  position: fixed;
   background: rgba(248, 248, 248, 0.7);
-  border-radius: 0;
   border: 0;
 }
 
 .navbar-static-top {
-  background: rgba(248, 248, 248, 0);
-  border: 0;
-  margin: 0;
   position: absolute;
-  left: 0;
-  top:0;
-  width: 100%;
+  background: rgba(248, 248, 248, 0);
 }
 
 @mixin overlay-background-image($color, $img) {
@@ -33,95 +37,72 @@ nav {
   background-image: linear-gradient($color, $color), $img;
 }
 
+$overlay-strength: 0.25;
 
 header {
   background: no-repeat center center;
   background-color: #808080;
-  @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-1000.jpg'));
+  @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-800.jpg'));
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 350px;
+  @media (min-width: $screen-sm-min) {
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1000.jpg'));
+  }
+  @media (min-width: $screen-md-min) {
+    height: 400px;
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1200.jpg'));
+  }
+  @media (min-width: $screen-lg-min) {
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-2000.jpg'));
+    height: 600px;
+  }
+  @media (min-width: $screen-hg-min) {
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-3000.jpg'));
+    height: 750px;
+  }
+}
 
-  h1 {
-    font-size: 40px;
-  }
-  h2 {
-    font-size: 25px;
-  }
+header {
+
+
+  @include center-nested-element();
 
   .container {
     color: white;
-    display: -webkit-box;
     text-align: center;
     width: 100%;
-    height: 100%;
-
-    .row {
-      display: -webkit-flex;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
+    h1 {
+      font-size: 50px;
+      font-weight: 800;
     }
-
-    hr.small {
+    h2 {
+      font-size: 30px;
+      font-weight: 800;
+    }
+    hr {
       max-width: 100px;
       border-color: white;
       border-width: 4px;
       margin: 10px auto;
     }
-  }
-}
-
-@media (min-width: 1000px) {
-  header {
-    @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-2000.jpg'));
-    height: 500px;
-  }
-}
-@media (min-width: 1500px) {
-  header {
-    height: 600px;
-  }
-}
-@media (min-width: 2000px) {
-  header {
-    @include overlay-background-image(rgba(black, 0.35), url('/img/main-page-background-3000.jpg'));
-    height: 700px;
-    h1 {
-      font-size: 100px;
+    @mixin h1-h2-size($h1-size, $h2-size) {
+      h1 { font-size: $h1-size; }
+      h2 { font-size: $h2-size; }
     }
-    h2 {
-      font-size: 70px;
+    @media (min-width: $screen-sm-min) {
+      @include h1-h2-size(70px,40px);
     }
-  }
-}
-
-@media (min-width: 992px) {
-  header {
-    h1 {
-      font-size: 65px;
+    @media (min-width: $screen-md-min) {
+      @include h1-h2-size(80px,50px);
     }
-    h2 {
-      font-size: 45px;
+    @media (min-width: $screen-lg-min) {
+      @include h1-h2-size(100px,60px);
     }
-  }
-}
-
-@media (min-width: 1200px) {
-  header {
-    h1 {
-      font-size: 80px;
-    }
-    h2 {
-      font-size: 50px;
+    @media (min-width: $screen-hg-min) {
+      @include h1-h2-size(130px,80px);
     }
   }
 }
