@@ -31,41 +31,6 @@
     <section class="body">
       {{ content }} 
     </section>
-
-    <footer>
-      {% include footer.html %}
-    </footer>
-
-    <!--<script src="js/jquery.min.js"></script>-->
-    <!--<script src="js/bootstrap.min.js"></script>-->
-    <script type="text/javascript">
-      window.onload = function () {
-        var nav = document.querySelector("nav");
-        var nonFixedClass = "navbar-static-top";
-        var fixedClass = "navbar-fixed-top";
-
-        var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
-        var didScroll = false;
-        window.addEventListener('scroll', function(e){
-          didScroll = true;
-        });
-        setInterval(function(e){
-          if (!didScroll) {
-            return;
-          }
-          didScroll = false;
-          var position = window.pageYOffset || document.documentElement.scrollTop;
-          var scrollingReverse = position < previousPosition;
-          var navVisible = position == 0;
-          if (scrollingReverse && !navVisible) {
-            nav.className = nav.className.replace(nonFixedClass, fixedClass);
-          }
-          else if (!scrollingReverse || navVisible) {
-            nav.className = nav.className.replace(fixedClass, nonFixedClass);
-          }
-          previousPosition = position;
-        }, 250);
-      };
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
