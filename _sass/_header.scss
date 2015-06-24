@@ -20,12 +20,12 @@ nav {
 .navbar-fixed-top {
   position: fixed;
   background: rgba(248, 248, 248, 0.7);
-  border: 0;
 }
 
 .navbar-static-top {
   position: absolute;
   background: rgba(248, 248, 248, 0);
+  a { color: white; }
 }
 
 @mixin overlay-background-image($color, $img, $img2x) {
@@ -82,8 +82,6 @@ header {
 }
 
 header {
-
-
   @include center-nested-element();
 
   .container {

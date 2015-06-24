@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.body {
+  max-width: $container-sm;
+  @media (min-width: $screen-md-min) {
+    max-width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    max-width: $container-lg;
+  }
+  padding: 0 $base-margin;
+  margin: 0 auto;
+}
+
+footer {
+  margin: 0 $base-margin;
+}
