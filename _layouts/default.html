@@ -1,20 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   {% include head.html %}
-
   <body>
-
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+    <section class="body">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{ content }} 
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    {% include footer.html %}
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {% include footer.html %}
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var nav = document.querySelector("nav");
+        var nonFixedClass = "navbar-inverse navbar-static-top";
+        var fixedClass = "navbar-fixed-top";
+
+        var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
+        var didScroll = false;
+        window.addEventListener('scroll', function(e){
+          didScroll = true;
+        });
+        setInterval(function(e){
+          if (!didScroll) {
+            return;
+          }
+          didScroll = false;
+          var position = window.pageYOffset || document.documentElement.scrollTop;
+          var scrollingReverse = position < previousPosition;
+          var navVisible = position == 0;
+          if (scrollingReverse && !navVisible) {
+            nav.className = nav.className.replace(nonFixedClass, fixedClass);
+          }
+          else if (!scrollingReverse || navVisible) {
+            nav.className = nav.className.replace(fixedClass, nonFixedClass);
+          }
+          previousPosition = position;
+        }, 250);
+      };
+    </script>
   </body>
-
 </html>
