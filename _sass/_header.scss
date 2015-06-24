@@ -28,13 +28,29 @@ nav {
   background: rgba(248, 248, 248, 0);
 }
 
-@mixin overlay-background-image($color, $img) {
+@mixin overlay-background-image($color, $img, $img2x) {
   background-image: -moz-linear-gradient(top, $color 0%, $color 100%), $img; /* FF3.6+ */
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color), color-stop(100%,$color)), $img; /* Chrome,Safari4+ */
   background-image: -webkit-linear-gradient(top, $color 0%, $color 100%), $img; /* Chrome10+,Safari5.1+ */
   background-image: -o-linear-gradient(top, $color 0%,$color 100%), $img; /* Opera 11.10+ */
   background-image: -ms-linear-gradient(top, $color 0%,$color 100%), $img; /* IE10+ */
   background-image: linear-gradient($color, $color), $img;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: -moz-linear-gradient(top, $color 0%, $color 100%), $img2x; /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color), color-stop(100%,$color)), $img2x; /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, $color 0%, $color 100%), $img2x; /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, $color 0%,$color 100%), $img2x; /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, $color 0%,$color 100%), $img2x; /* IE10+ */
+    background-image: linear-gradient($color, $color), $img2x;
+
+  }
 }
 
 $overlay-strength: 0.25;
@@ -42,25 +58,25 @@ $overlay-strength: 0.25;
 header {
   background: no-repeat center center;
   background-color: #808080;
-  @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-800.jpg'));
+  @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-800.jpg'), url('/img/main-page-background-2000.jpg'));
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 350px;
   @media (min-width: $screen-sm-min) {
-    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1000.jpg'));
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1000.jpg'), url('/img/main-page-background-2000.jpg'));
   }
   @media (min-width: $screen-md-min) {
     height: 400px;
-    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1200.jpg'));
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1200.jpg'), url('/img/main-page-background-3000.jpg'));
   }
   @media (min-width: $screen-lg-min) {
-    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-2000.jpg'));
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-2000.jpg'), url('/img/main-page-background-3000.jpg'));
     height: 600px;
   }
   @media (min-width: $screen-hg-min) {
-    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-3000.jpg'));
+    @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-3000.jpg'), url('/img/main-page-background-3000.jpg'));
     height: 750px;
   }
 }
