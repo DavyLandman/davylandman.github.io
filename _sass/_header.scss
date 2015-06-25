@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "mixins/_transition.scss";
 @import "mixins/_center.scss";
+@import "mixins/_clearfix.scss";
 
 nav {
   @include transition(all, 0.5s);
@@ -12,20 +13,52 @@ nav {
   left: 0;
   top: 0;
   width: 100%;
-  ul {
+  @include clearfix();
 
+  ul {
+    margin: 0;
+    display: block;
+    float: right;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    li {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      padding: ($line-height-computed / 2 );
+      line-height: $line-height-computed;
+    }
+    @media (min-width: $screen-sm-min) {
+      font-size: 14.5px;
+    }
+    @media (min-width: $screen-md-min) {
+      font-size: 15px;
+    }
+    @media (min-width: $screen-lg-min) {
+      font-size: 15.5px;
+    }
+    @media (min-width: $screen-hg-min) {
+      font-size: 16px;
+    }
   }
 }
 
 .navbar-fixed-top {
   position: fixed;
   background: rgba(248, 248, 248, 0.7);
+  .current {
+    background-color: darken(rgba(248, 248, 248, 0.7), 10%);
+  }
 }
 
 .navbar-static-top {
   position: absolute;
   background: rgba(248, 248, 248, 0);
   a { color: white; }
+  .current {
+    background-color: rgba(black, 0.3);
+  }
 }
 
 @mixin overlay-background-image($color, $img, $img2x) {
