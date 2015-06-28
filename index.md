@@ -9,8 +9,6 @@ Hello my name is Davy Landman. I'm a [software engineer](#software), [researcher
 
 On this site I share my professional interests and achievements, you'll find pre-prints and abstracts of my published [papers](#research), a list of [software](#software) I have developed or contributed too, and a [blog](/blog/) about stuff that I'd like to share, but won't fit in a tweet.
 
-<a href="#" id="software"></a>
-
 ### Software
 
 Writing software is a wonderful combination of creativity and engineering. Here is a list of the open source project's developed or frequently contribute to.
@@ -22,8 +20,6 @@ Writing software is a wonderful combination of creativity and engineering. Here 
 - Arduino AES
 - Lego Turing language
 - [EFWrappableFields](): allow enum and protected collections in C# Entity Framework classes without impacting LINQ. This is a library I open source while working at a previous employer, it enabled C# features not supported by the EF team, while keeping the same SQL queries. It involved some rewriting of the LINQ expression tree.
-
-<a href="#" id="research"></a>
 
 ### Research
 
