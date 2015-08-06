@@ -1,6 +1,18 @@
 @charset "UTF-8";
 
 .body {
+  max-width: $container-sm * 0.8;
+  @media (min-width: $screen-md-min) {
+    max-width: $container-md * 0.8;
+  }
+  //@media (min-width: $screen-lg-min) {
+  //  max-width: $container-lg * 0.8;
+  //}
+  padding: 0 ($base-margin / 2);
+  margin: 0 auto;
+}
+
+.body.blog {
   max-width: $container-sm;
   @media (min-width: $screen-md-min) {
     max-width: $container-md;
@@ -8,6 +20,4 @@
   //@media (min-width: $screen-lg-min) {
   //  max-width: $container-lg;
   //}
-  padding: 0 ($base-margin / 2);
-  margin: 0 auto;
 }

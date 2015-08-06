@@ -17,6 +17,7 @@ nav {
 
   ul {
     margin: 0;
+    padding: 0;
     display: block;
     float: right;
     list-style-image: none;
@@ -27,13 +28,19 @@ nav {
       display: block;
       float: left;
       a {
-      box-sizing: border-box;
-      display: block;
+        box-sizing: border-box;
+        display: block;
         padding: ($line-height-computed / 2 );
+        @media (max-width: $screen-sm-min / 2) {
+          padding: ($line-height-computed / 3 );
+        }
         line-height: $line-height-computed;
       }
     }
 
+    @media (max-width: $screen-sm-min / 2) {
+      font-size: 14px;
+    }
     @media (min-width: $screen-sm-min) {
       font-size: 14.5px;
     }
