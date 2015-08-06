@@ -5,9 +5,9 @@
   @media (min-width: $screen-md-min) {
     max-width: $container-md;
   }
-  @media (min-width: $screen-lg-min) {
-    max-width: $container-lg;
-  }
+  //@media (min-width: $screen-lg-min) {
+  //  max-width: $container-lg;
+  //}
   padding: 0 ($base-margin / 2);
   margin: 0 auto;
 }

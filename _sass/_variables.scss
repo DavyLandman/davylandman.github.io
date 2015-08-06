@@ -152,12 +152,13 @@ $screen-md-min:              992px !default;
 // Large screen / wide desktop
 $screen-lg-min:              1200px !default;
 
+// Huge screen
 $screen-hg-min:              2000px !default;
 
 // So media queries don't overlap when required, provide a maximum
 $screen-sm-max:              ($screen-md-min - 1) !default;
 $screen-md-max:              ($screen-lg-min - 1) !default;
-$screen-ld-max:              ($screen-hg-min - 1) !default;
+$screen-lg-max:              ($screen-hg-min - 1) !default;
 
 //== Main windows padding
 $base-margin:                 40px !default;
