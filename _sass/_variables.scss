@@ -168,6 +168,7 @@ $float-breakpoint:            $screen-sm-min !default;
 //
 //## Define the maximum width of `.container` for different screen sizes.
 
+$container-tn:                 (640px + $base-margin) !default;
 //** For `$screen-sm-min` and up.
 $container-sm:                 (720px + $base-margin) !default;
 

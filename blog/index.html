@@ -1,0 +1,21 @@
+---
+layout: default 
+title: Blog
+published: true
+---
+
+<h2>Blog</h2>
+<p class="lead">
+   Welcome to my blog, the topics are research and software engineering.
+</p>
+<p>
+  Here is a list of recent posts, check the <a href="/blog/archive.html">Archive</a> for more, and if you want there is an <a href="/blog/feed.xml" class="rss_link">RSS feed</a> available.
+</p>
+<dl class="blogPosts">
+  {% for post in site.posts offset:0 limit:10 %}
+      <dt><a href="{{ post.url }}">{{ post.title }}</a></dt>
+      <dd>
+         {{ post.excerpt }}
+      </dd>
+  {% endfor %}
+</dl>

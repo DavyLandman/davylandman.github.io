@@ -9,6 +9,11 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.davylandman.nl" # the base hostname & protocol for your site
 twitter_username: DavyLandman
 github_username: DavyLandman
+permalink: /blog/:categories/:year/:month/:day/:title/
+excerpt_separator: <!--more-->
+gems:
+- jekyll-redirect-from
+- jekyll-sitemap
 
 # Build settings
 markdown: kramdown

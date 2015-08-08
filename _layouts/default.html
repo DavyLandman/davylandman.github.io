@@ -1,3 +1,13 @@
+{% assign isBlog = false %}
+{% for post in site.posts %}
+   {% if page.url == post.url %}
+      {% assign isBlog = true %}
+   {% endif %}
+{% endfor %}
+{% assign isBlogList = false %}
+{% if page.url == "/blog/index.html" or page.url == "/blog/archive.html" %}
+   {% assign isBlogList = true %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,11 +16,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link href="/css/main.css" rel="stylesheet">
+
+    {% if isBlog or isBlogList %}
+      <link href="/blog/feed.xml" rel="alternate" type="application/rss+xml" title="RSS" />
+    {% endif %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,13 +38,42 @@
     <header>
       <div class="container">
         <h1> Davy Landman </h1>
-        <hr>
         <h2> Software Engineer & Researcher</h2>
       </div>
     </header>
-    <section class="body">
-      {{ content }} 
-    </section>
-    <script src="js/main.js"></script>
+    {% if isBlog or isBlogList %}
+      <main class="blog">
+        <article>
+          {{ content }} 
+        </article>
+        <nav class="blog">
+          <ul>
+            {% if page.url == "/blog/index.html" %}
+              <li class="active"><a href="/blog/">Index</a>
+            {% else %}
+              <li><a href="/blog/">Index</a>
+            {% endif %}
+            {% for post in site.posts offset:0 limit:10 %}
+              {% if page.url == post.url %}
+                <li class="active"><a href="{{post.url}}">{{post.title}}</a>
+              {% else %}
+                  <li><a href="{{post.url}}">{{post.title}}</a>
+              {% endif %}
+            {% endfor %}
+            {% if page.url == "/blog/archive.html" %}
+              <li class="active"><a href="/blog/archive.html">Archive</a>
+            {% else %}
+              <li><a href="/blog/archive.html">Archive</a>
+            {% endif %}
+            <li><a href="/blog/feed.xml" target="_blank"><i class="icon-rss"></i> rss feed</a>
+          </ul>
+        </nav>
+      </main>
+    {% else %}
+      <main>
+        {{ content }} 
+      </main>
+    {% endif %}
+    <script src="/js/main.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
 @import "mixins/_center.scss";
 @import "mixins/_clearfix.scss";
 
-nav {
+body>nav {
   @include transition(all, 0.5s);
   font-weight: 800;
   text-transform: uppercase;
@@ -107,7 +107,7 @@ nav {
 
 $overlay-strength: 0.25;
 
-header {
+body>header {
   background: no-repeat center center;
   background-color: #808080;
   @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-800.jpg'), url('/img/main-page-background-2000.jpg'));
@@ -133,7 +133,7 @@ header {
   }
 }
 
-header {
+body>header {
   @include center-nested-element();
 
   .container {
@@ -159,16 +159,16 @@ header {
       h2 { font-size: $h2-size; }
     }
     @media (min-width: $screen-sm-min) {
-      @include h1-h2-size(70px,40px);
+      @include h1-h2-size(70px,38px);
     }
     @media (min-width: $screen-md-min) {
-      @include h1-h2-size(80px,50px);
+      @include h1-h2-size(80px,45px);
     }
     @media (min-width: $screen-lg-min) {
-      @include h1-h2-size(100px,60px);
+      @include h1-h2-size(100px,55px);
     }
     @media (min-width: $screen-hg-min) {
-      @include h1-h2-size(130px,80px);
+      @include h1-h2-size(130px,70px);
     }
   }
 }

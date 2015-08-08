@@ -1,23 +1,45 @@
 @charset "UTF-8";
 
-.body {
+main {
   max-width: $container-sm * 0.8;
   @media (min-width: $screen-md-min) {
     max-width: $container-md * 0.8;
   }
-  //@media (min-width: $screen-lg-min) {
-  //  max-width: $container-lg * 0.8;
-  //}
   padding: 0 ($base-margin / 2);
   margin: 0 auto;
 }
 
-.body.blog {
-  max-width: $container-sm;
+main.blog {
+  @include clearfix();
+  max-width: $container-tn;
+  @media (min-width: $screen-sm-min) {
+    max-width: $container-sm;
+  }
   @media (min-width: $screen-md-min) {
     max-width: $container-md;
   }
-  //@media (min-width: $screen-lg-min) {
-  //  max-width: $container-lg;
-  //}
+  nav {
+    float:none;
+  }
+  @media (min-width: $screen-sm-min) {
+     nav {
+      float: right;
+      width: $container-sm * 0.2;
+      margin-left: -$container-sm * 0.2;
+    }
+    article {
+      float: left;
+      margin-right: $container-sm * 0.2;
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    nav {
+      width: $container-md * 0.2;
+      margin-left: -$container-md * 0.2;
+    }
+    article {
+      margin-right: $container-md * 0.2;
+    }
+  }
+
 }
