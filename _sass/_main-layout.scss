@@ -24,21 +24,21 @@ main.blog {
   @media (min-width: $screen-sm-min) {
      nav {
       float: right;
-      width: $container-sm * 0.2;
-      margin-left: -$container-sm * 0.2;
+      width: $container-sm * $blog-navbar-ratio;
+      margin-left: -$container-sm * $blog-navbar-ratio;
     }
     article {
       float: left;
-      margin-right: $container-sm * 0.2;
+      margin-right: $container-sm * $blog-navbar-ratio;
     }
   }
   @media (min-width: $screen-md-min) {
     nav {
-      width: $container-md * 0.2;
-      margin-left: -$container-md * 0.2;
+      width: $container-md * $blog-navbar-ratio;
+      margin-left: -$container-md * $blog-navbar-ratio;
     }
     article {
-      margin-right: $container-md * 0.2;
+      margin-right: $container-md * $blog-navbar-ratio;
     }
   }
 

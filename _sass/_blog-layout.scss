@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+main.blog {
+  @include clearfix();
+  max-width: $container-tn;
+  @media (min-width: $screen-sm-min) {
+    max-width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    max-width: $container-md;
+  }
+  nav {
+    float:none;
+    margin-top: $line-height-computed;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: block;
+      list-style-image: none;
+      list-style-position: outside;
+      list-style-type: none;
+      li {
+        box-sizing: border-box;
+        display: block;
+        a {
+          box-sizing: border-box;
+          display: block;
+          padding: ($line-height-computed / 4 );
+        }
+        a:hover {
+          background-color: darken(rgba(248, 248, 248, 1), 1%);
+        }
+      }
+      .current, 
+      .current a:hover {
+        font-weight: 600;
+        background-color: darken(rgba(248, 248, 248, 1), 5%);
+      }
+    }
+  }
+  @media (min-width: $screen-sm-min) {
+     nav {
+      float: right;
+      width: $container-sm * $blog-navbar-ratio;
+      margin-left: -$container-sm * $blog-navbar-ratio;
+    }
+    article {
+      float: left;
+      margin-right: $container-sm * $blog-navbar-ratio;
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    nav {
+      width: $container-md * $blog-navbar-ratio;
+      margin-left: -$container-md * $blog-navbar-ratio;
+    }
+    article {
+      margin-right: $container-md * $blog-navbar-ratio;
+    }
+  }
+}

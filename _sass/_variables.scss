@@ -178,6 +178,8 @@ $container-md:                 (940px  + $base-margin) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 (1140px  + $base-margin) !default;
 
+// Blog nav part
+$blog-navbar-ratio:             0.25;
 
 //== Navbar
 //
