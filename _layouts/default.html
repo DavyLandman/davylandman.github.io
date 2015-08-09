@@ -5,7 +5,8 @@
    {% endif %}
 {% endfor %}
 {% assign isBlogList = false %}
-{% if isBlog == false and page.url || replace_first:"/","" || split:"/" || first || strip_newlines == "blog" %}
+{% assign currentPage =page.url || replace_first:"/","" || split:"/" || first || strip_newlines %}
+{% if isBlog == false and currentPage == "blog" %}
    {% assign isBlogList = true %}
 {% endif %}
 <!DOCTYPE html>
