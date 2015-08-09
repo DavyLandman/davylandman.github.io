@@ -5,7 +5,7 @@
    {% endif %}
 {% endfor %}
 {% assign isBlogList = false %}
-{% if page.url == "/blog/index.html" or page.url == "/blog/archive.html" %}
+{% if isBlog == false and page.url || replace_first:"/","" || split:"/" || first || strip_newlines == "blog" %}
    {% assign isBlogList = true %}
 {% endif %}
 <!DOCTYPE html>
@@ -32,6 +32,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!--[if lt IE 7 ]>
+    <link href="/css/fontello-ie7.css" rel="stylesheet">
+    <![endif]-->
   </head>
   <body>
     <nav class="navbar-static-top">{% include navigation.html %}</nav>
@@ -49,23 +52,23 @@
         <nav class="blog">
           <ul>
             {% if page.url == "/blog/index.html" %}
-              <li class="current"><a href="/blog/">Index</a>
+              <li class="current"><a class="icon-th" href="/blog/">Index</a>
             {% else %}
-              <li><a href="/blog/">Index</a>
+              <li><a class="icon-th" href="/blog/">Index</a>
             {% endif %}
             {% for post in site.posts offset:0 limit:10 %}
               {% if page.url == post.url %}
-                <li class="current"><a href="{{post.url}}">{{post.title}}</a>
+                <li class="current"><a class="icon-article" href="{{post.url}}">{{post.title}}</a>
               {% else %}
-                  <li><a href="{{post.url}}">{{post.title}}</a>
+                  <li><a class="icon-article" href="{{post.url}}">{{post.title}}</a>
               {% endif %}
             {% endfor %}
             {% if page.url == "/blog/archive.html" %}
-              <li class="current"><a href="/blog/archive.html">Archive</a>
+              <li class="current"><a class="icon-calendar-alt" href="/blog/archive.html">Archive</a>
             {% else %}
-              <li><a href="/blog/archive.html">Archive</a>
+              <li><a class="icon-calendar-alt" href="/blog/archive.html">Archive</a>
             {% endif %}
-            <li><a href="/blog/feed.xml" target="_blank"><i class="icon-rss"></i> rss feed</a>
+            <li><a class="icon-rss-1" href="/blog/feed.xml" target="_blank"><i class="icon-rss"></i> rss feed</a>
           </ul>
         </nav>
       </main>
