@@ -1,6 +1,18 @@
 <ul>
-  <li><a href="/" class="current">Home</a></li>
-  <li><a href="/software/">Software</a></li>
-  <li><a href="/research/">Research</a></li>
-  <li><a href="/blog/">Blog</a></li>
+  {% assign title="Home" %}
+  {% assign link="/" %}
+  {% include navigation_item.html %}
+
+  {% assign title="Software" %}
+  {% assign link="/software/" %}
+  {% include navigation_item.html %}
+
+  {% assign title="Research" %}
+  {% assign link="/research/" %}
+  {% include navigation_item.html %}
+
+  {% assign title="Blog" %}
+  {% assign link="/blog/" %}
+  {% assign blogRoot = true %}
+  {% include navigation_item.html %}
 </ul>
