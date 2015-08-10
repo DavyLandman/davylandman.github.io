@@ -20,7 +20,7 @@ Writing software is a wonderful combination of creativity and engineering. Here 
 - [cloud-backup](https://github.com/DavyLandman/cloud-photo-backup): small utility to sync a directory with pictures to another folder, it also compresses and rescales the pictures in the target folder to 300dpi at 10x15cm print size. This reduces the size of the files greatly and allows you to keep this folder in dropbox/google drive without consuming too much space. 
 - [AESLib](https://github.com/DavyLandman/AESLib): An Arduino ready extract from the AVR-Crypto-Lib, it packages the ASM implementations of AES into a library ready to use in Arduino IDE.
 - [Lego Turing language](https://github.com/cwi-swat/TuringLEGO): I developed the IDE and Language we used in our [Lego Turing Machine](http://www.legoturingmachine.org).
-- [EFWrappableFields](): allow enum and protected collections in C# Entity Framework classes without impacting LINQ. This is a library I open source while working at a previous employer, it enabled C# features not supported by the EF team, while keeping the same SQL queries. It involved some rewriting of the LINQ expression tree.
+- [EFWrappableFields](): allow enum and protected collections in C# Entity Framework (EF) classes without impacting LINQ. This is a library I open source while working at a previous employer, it enabled C# features not supported by the EF team, while keeping the same LINQ (and SQL) queries. It dynamically rewriting the LINQ expression tree.
 
 ### Research
 
