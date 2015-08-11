@@ -119,19 +119,52 @@ body>header {
   @media (min-width: $screen-sm-min) {
     @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1000.jpg'), url('/img/main-page-background-2000.jpg'));
   }
+
   @media (min-width: $screen-md-min) {
-    height: 400px;
     @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-1200.jpg'), url('/img/main-page-background-3000.jpg'));
   }
+  @media (min-height: 600px) and (min-width: $screen-md-min) {
+    height: 400px;
+  }
+
   @media (min-width: $screen-lg-min) {
     @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-2000.jpg'), url('/img/main-page-background-3000.jpg'));
+  }
+  @media (min-height: 750px) and (min-width: $screen-lg-min) {
     height: 600px;
   }
+
   @media (min-width: $screen-hg-min) {
     @include overlay-background-image(rgba(black, $overlay-strength), url('/img/main-page-background-3000.jpg'), url('/img/main-page-background-3000.jpg'));
+  }
+  @media (min-height: 900px) and (min-width: $screen-hg-min) {
     height: 750px;
   }
 }
+
+body.smallHeader>header {
+  height: 250px;
+  @media (min-height: 500px) and (min-width: $screen-md-min) {
+    height: 300px;
+  }
+  @media (min-height: 700px) and (min-width: $screen-md-min) {
+    height: 400px;
+  }
+  @media (min-height: 600px) and (min-width: $screen-lg-min) {
+    height: 400px;
+  }
+  @media (min-height: 800px) and (min-width: $screen-lg-min) {
+    height: 600px;
+  }
+  @media (min-height: 800px) and (min-width: $screen-hg-min) {
+    height: 600px;
+  }
+  @media (min-height: 1100px) and (min-width: $screen-hg-min) {
+    height: 750px;
+  }
+
+}
+
 
 body>header {
   @include center-nested-element();
