@@ -12,10 +12,14 @@ github_username: DavyLandman
 permalink: /blog/:year/:month/:day/:title/
 excerpt_separator: <!--more-->
 gems:
-- jekyll-redirect-from
-- jekyll-sitemap
+    - jekyll-redirect-from
+    - jekyll-sitemap
+    - jekyll-feed
 
 # Build settings
 markdown: kramdown
 sass:
   style: compressed
+
+feed:
+    path: blog/feed.xml
