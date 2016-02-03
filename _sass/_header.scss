@@ -5,9 +5,9 @@
 
 body>nav {
   @include transition(all, 0.5s);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   border: 0;
   margin: 0;
   left: 0;
@@ -174,12 +174,13 @@ body>header {
     text-align: center;
     width: 100%;
     h1 {
-      font-size: 50px;
-      font-weight: 800;
+      font-size: 60px;
+      font-weight: 700;
     }
     h2 {
-      font-size: 30px;
-      font-weight: 800;
+      font-size: 35px;
+      font-weight: 400;
+      font-family: "Raleway Dots", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     hr {
       max-width: 100px;
@@ -192,16 +193,16 @@ body>header {
       h2 { font-size: $h2-size; }
     }
     @media (min-width: $screen-sm-min) {
-      @include h1-h2-size(70px,38px);
+      @include h1-h2-size(80px,50px);
     }
     @media (min-width: $screen-md-min) {
-      @include h1-h2-size(80px,45px);
+      @include h1-h2-size(100px,60px);
     }
     @media (min-width: $screen-lg-min) {
-      @include h1-h2-size(100px,55px);
+      @include h1-h2-size(130px,70px);
     }
     @media (min-width: $screen-hg-min) {
-      @include h1-h2-size(130px,70px);
+      @include h1-h2-size(150px,80px);
     }
   }
 }
