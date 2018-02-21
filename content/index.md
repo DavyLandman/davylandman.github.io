@@ -1,7 +1,6 @@
 ---
 title: "Davy Landman"
-date: 2018-02-21T11:08:49+01:00
-draft: true
+addHead: true
 ---
 
 Hi, I am the Co-Founder and CEO of [SWAT.engineering](http://www.swat.engineering), a proud father, an enthusiastic Software Engineer, and have a [PhD](/research/) in Software Engineering research. Next to this I enjoy woodworking, 3d-printing, gardening, and cooking. 

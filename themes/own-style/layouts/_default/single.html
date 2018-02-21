@@ -2,9 +2,12 @@
     <main>
         <section>
             <h1>{{ .Title }}</h1>
+            <img class="head" width="90px" src="{{ .Site.BaseURL }}img/davy-head.jpg" />
             <div class="main-content">
                 {{ .Content }}
             </div>
+            {{ if .Page.Params.addHead }}
+            {{ end }}
         </section>
     </main>
 {{ partial "footer.html" . }}
