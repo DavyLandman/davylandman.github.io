@@ -10,7 +10,7 @@ extra_head: |
 
 Hi, I am a proud father, the Co-founder and CEO of [<span class="acro">SWAT</span>.engineering](http://www.swat.engineering), an enthusiastic Software Engineer, and have a [PhD](/research/) in Software Engineering research. Next to this I enjoy woodworking, 3D-printing, gardening, and cooking.
 
-I started out as an enterprise software engineer, then went to further study with [prof.dr. Paul Klint](https://homepages.cwi.nl/~paulk/) and [prof.dr. Jurven Vinjue](https://homepages.cwi.nl/~jurgenv/) to learn about a better way to develop software. After finishing my PhD, we started <span class="acro">SWAT</span>.engineering to bring Domain Specific Languages to the enterprise software world.
+I started out as an enterprise software engineer, then went to further study with [prof.dr. Paul Klint](https://homepages.cwi.nl/~paulk/) and [prof.dr. Jurgen Vinju](https://homepages.cwi.nl/~jurgenv/) to learn about a better way to develop software. After finishing my PhD, we started <span class="acro">SWAT</span>.engineering to bring Domain Specific Languages to the enterprise software world.
 
 I contribute to [open source <i class="fab fa-github"></i>](https://github.com/DavyLandman) when luxury permits, and am one of the core-developers of the [Rascal meta programming language](https://www.rascal-mpl.org). I am interested in a wide range of challenges: domain & language design, reverse engineering, concurrency, encryption, compression, Unicode, performance, and many more.
 
