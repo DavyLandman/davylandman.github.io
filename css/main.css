@@ -9,10 +9,10 @@ section {
 }
 
 @media only screen and (min-width: 720px) and (min-height: 600px) { 
-    html, body, main {
+    html, body {
         height: 100%;
     }
-    main {
+    body {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -22,9 +22,13 @@ section {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
-    section {
+    main {
         max-width: 700px;
         margin: 10px;
     }
@@ -37,7 +41,7 @@ section {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
 }
-main {
+body {
     color: #333;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.25;
@@ -50,9 +54,42 @@ main {
 }
 
 @media only screen and (min-width: 720px) and (min-height: 600px) { 
-    main {
+    body {
         font-size: 1.05rem;
     }
+    nav {
+        font-size: 1.4rem;
+    }
+}
+
+
+nav {
+    font-variant:small-caps;
+    text-transform: lowercase;
+    letter-spacing: 0.3px;
+    color: #999;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 719px) { 
+    nav {
+        font-size: 1.1rem;
+    }
+    nav a {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+}
+
+nav a {
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+
+nav i {
+    font-size: 0.85rem;
+    padding-right: 0.05em;
 }
 
 .acro {
